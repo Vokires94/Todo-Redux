@@ -1,5 +1,4 @@
-
-export default function(state =[], action) {
+export default function todo(state =[], action) {
     switch (action.type) {
         case "ADD_TODO": {
             return state.concat([{ id: action.payload.id, text: action.payload.text, completed: false }]);

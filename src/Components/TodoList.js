@@ -12,24 +12,9 @@ const TodoList = (list) => {
 
     const toggleChecked = (id) => {
         store.dispatch(toggleToDo(id));
-        console.log(id);
     }
 
-    switch(list.visibilityfilter) {
-        case "SHOW_ALL": {
-            return(
-                <ul className="todo-list" style={{listStyleType: "none"}}>
-                    {list.todo.length > 0 
-                    ? list.todo.map((elem, index) => {
-                        return <li key={`todo-${index}`} onClick={() => toggleChecked(elem.id)}>{!elem.completed ? "✔️" : "❌"}{" "}
-                        <span style={!elem.completed ? {textDecoration: "none"} : {textDecoration: "line-through"}}>{elem.text}</span>
-                        </li>;
-                        })
-                    : <li>Empty List!</li>
-                    }
-                </ul>
-            )
-        }
+    switch(list.visibilityfilter) {        
         case "SHOW_COMPLETED": {             
             const sortedlist = list.todo.filter((elem, index) => elem.completed);
             return(
@@ -56,6 +41,20 @@ const TodoList = (list) => {
                         </li>                        
                         })
                     : <li>All tasks are complete!</li>
+                    }
+                </ul>
+            )
+        }
+        default: {
+            return(
+                <ul className="todo-list" style={{listStyleType: "none"}}>
+                    {list.todo.length > 0 
+                    ? list.todo.map((elem, index) => {
+                        return <li key={`todo-${index}`} onClick={() => toggleChecked(elem.id)}>{!elem.completed ? "✔️" : "❌"}{" "}
+                        <span style={!elem.completed ? {textDecoration: "none"} : {textDecoration: "line-through"}}>{elem.text}</span>
+                        </li>;
+                        })
+                    : <li>Empty List!</li>
                     }
                 </ul>
             )
