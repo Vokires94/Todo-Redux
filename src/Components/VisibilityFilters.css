@@ -1,0 +1,11 @@
+.visibility-filters {
+    font-size: 16px;
+    display: block;
+}
+
+.visibility-filters span:hover {
+    background-color: tomato;
+    font-size: 18px;
+    transition: font-size 2s linear;
+    cursor: pointer;
+}

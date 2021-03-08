@@ -1,6 +1,7 @@
 import React from 'react';
+import './VisibilityFilters.css'
 import store from '../store';
-import { setFilter } from '../Actions';
+import { setFilter } from '../actions';
 
 const VisibilityFilters = () => {
 

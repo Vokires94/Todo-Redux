@@ -1,4 +1,3 @@
-
 export const addToDo = content => ({
     type: "ADD_TODO",
     payload: {
