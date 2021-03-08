@@ -4,6 +4,7 @@ import store from './store';
 import AddTodo from './Components/AddTodo';
 import TodoList from './Components/TodoList';
 import VisibilityFilters from './Components/VisibilityFilters';
+import Helpers from './Components/Helpers';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
             <AddTodo/>
             <TodoList/>
             <VisibilityFilters/>
+            <Helpers/>
         </div>
     </Provider>
   );

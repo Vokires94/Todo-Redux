@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import store from '../store';
-import { addToDo } from '../Actions';
+import { addToDo, cleanToDo } from '../Actions';
 
 function AddTodo() {
     const [listdata, setList] = useState('');
@@ -10,7 +10,9 @@ function AddTodo() {
         store.dispatch(addToDo(listdata));
         setList('');
       }
-        
+    }
+      const cleanNotes = () => {
+        store.dispatch(cleanToDo());
     }
 
     return (
@@ -21,6 +23,9 @@ function AddTodo() {
         />
         <button className="add-todo" onClick={addlistvalue}>
           Add Todo
+        </button>
+        <button className="clean-list" onClick={cleanNotes}>
+          Clean all notes
         </button>
       </div>
     );
