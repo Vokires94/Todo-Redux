@@ -1,19 +1,25 @@
 import React from 'react';
 import { useState } from 'react';
 import store from '../store';
-import { addToDo, cleanToDo } from '../Actions';
+import { addToDo, cleanToDo, cleanDoneNotes } from '../Actions';
 
 function AddTodo() {
     const [listdata, setList] = useState('');
+
     const addlistvalue = () => {
       if(listdata!=="") {
         store.dispatch(addToDo(listdata));
         setList('');
       }
     }
+
       const cleanNotes = () => {
         store.dispatch(cleanToDo());
     }
+
+    const cleanDone = () => {
+      store.dispatch(cleanDoneNotes());
+  }
 
     return (
       <div>
@@ -26,6 +32,9 @@ function AddTodo() {
         </button>
         <button className="clean-list" onClick={cleanNotes}>
           Clean all notes
+        </button>
+        <button className="clean-done_work" onClick={cleanDone}>
+          Clean all done notes
         </button>
       </div>
     );

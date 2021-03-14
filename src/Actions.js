@@ -25,3 +25,7 @@ export const addLocal = list => ({
 export const cleanToDo = () => ({
     type: "CLEAN_NOTES"
 });
+
+export const cleanDoneNotes = () => ({
+    type: "CLEAN_DONE_NOTES"
+});
