@@ -16,6 +16,9 @@ export default function todo(state =[], action) {
         case "CLEAN_NOTES": {
           return [];
         }
+        case "CLEAN_DONE_NOTES": {
+          return state.filter((item) => !item.completed);
+        }
         default:
       return state
     }  
