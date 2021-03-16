@@ -1,6 +1,6 @@
 import {createStore} from "redux";
 import combineReducers from "./reducers";
-import { addLocal } from './actions';
+import { addLocal } from './Actions';
 
 
 let store = createStore(combineReducers);

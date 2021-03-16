@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './TodoList.css'
 import store from '../store';
-import { toggleToDo } from '../actions';
+import { toggleToDo } from '../Actions';
 
 const mapStateToProps = state => {
     const { todo, visibilityfilter } = state;
