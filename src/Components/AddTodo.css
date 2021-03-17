@@ -3,7 +3,7 @@
     width:200px;
     outline: none;
 }
-.add-todo, .clean-list{
+.add-todo, .clean-list, .clean-done_work{
     border-radius: 4px;
     outline: none;
     margin-left: 5px;
